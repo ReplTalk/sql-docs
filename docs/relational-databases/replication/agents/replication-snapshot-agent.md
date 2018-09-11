@@ -199,12 +199,12 @@ snapshot [ -?]
 >  Do not change the packet size unless you are certain that it will improve performance. For most applications, the default packet size is best.  
 
 **-PrefetchTables** [ **0**| **1**]  
- Optional parameter that specifies if the table objects will be prefetched and cached.  The default behavior is to prefetch certain table properties using SMO component based on an internal calculation.  This parameter can be helpful in scenarions where SMO prefetch operation takes considerable longer to run. If this parameter is not used, this decision is made at runtime based on the percentage of tables that are added as articles to the publication.  
+ Optional parameter specifies if table objects will be prefetched and cached. Default behavior is to prefetch certain table properties using SMO component based on an internal calculation.  Disabling prefetch is helpful in scenarios where SMO prefetch operation takes considerable longer to run, for example when publication contains large number articles with extended properties. If this parameter is not used, this decision is made at runtime based on the percentage of tables that are added as articles to the publication.  
   
-|OutputVerboseLevel value|Description|  
+|Prefetch value|Description|  
 |------------------------------|-----------------|  
 |**0**|Call to Prefetch method of SMO component is disabled.|  
-|**1**|Snapshot Agent will call Prefetch method to cache some table properties using SMO|  
+|**1**|Snapshot Agent will call SMO Prefetch method to cache table properties|  
 
  **-ProfileName** *profile_name*  
  Specifies an agent profile to use for agent parameters. If **ProfileName** is NULL, the agent profile is disabled. If **ProfileName** is not specified, the default profile for the agent type is used. For information, see [Replication Agent Profiles](../../../relational-databases/replication/agents/replication-agent-profiles.md).  
