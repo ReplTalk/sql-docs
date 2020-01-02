@@ -45,11 +45,12 @@ After a distribution database in the AG is configured based on the steps describ
 - Adding or removing nodes to existing distribution database AG.
 - A distributor may have multiple distribution databases. Each distribution database can be in its own AG and can be not in any AG. Multiple distribution databases can share an AG.
 - Publisher and distributor need to be on separate SQL Server instances.
+- Subscriber and distributor need to be on separate SQL Server instances.
 - If the listener for the availability group hosting the distribution database is configured to use a non-default port, then its required to setup an alias for the listener and the non-default port.
 
 ## Limitations or exclusions
 
-- Local distributor is not supported. For example, publisher and distributor must be different SQL Server instances. These instances can be hosted on the same sets of nodes.  A publisher using itself as distributor (a.k.a. local distributor) cannot support distribution databases in an AG.
+- Local distributor is not supported. For example, publisher and distributor or subscriber and distributor must be different SQL Server instances. These instances can be hosted on the same sets of nodes.  A publisher using itself as distributor (a.k.a. local distributor) cannot support distribution databases in an AG.
 - Oracle publisher is not supported.
 - Merge replication is not supported.
 - Transactional replication with immediate or queued updating subscriber is not supported.
